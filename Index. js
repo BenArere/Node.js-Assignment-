@@ -1,0 +1,19 @@
+const express = require('express');
+require('dotenv').config();
+
+const app = express();
+const port = process.env.port;
+
+app.get('/string', (req, res) => {
+    res.send('Welcome to my Node.je server');
+  });
+  app.get('/object', (req,res)=> {
+    res.json({message: 'Hello,World'});
+  });
+  app.get('/array', (req, res)=> {
+    res.json(['apple', 'banana', 'orange']);
+  });
+
+  app.listen(port, ()=>{
+    console.log('Server is running on port 3000')
+  })
